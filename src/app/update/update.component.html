@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div id="outPopUp" class="container mt-5">
+    <div class="container mt-5">
+    
+        <!--to show error alert-->
+        <div *ngIf="errormsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{errormsg}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      
+          <!--to show success alert-->
+          <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> Product Updated✅
+          </div>
+      
+        <form>
+          <div class="col-lg-6 mx-auto" >
+            <input type="text" class="form-control" formControlName="Id" placeholder="Enter Product ID">
+          </div>
+      <br>
+          <div class="col-lg-6 mx-auto">
+            <input type="text" class="form-control" formControlName="productName" placeholder="Enter Product Name">
+          </div>
+          <br>
+          <div class="col-lg-6 mx-auto">
+            <input type="text" class="form-control"  formControlName="TId" placeholder="Enter Type Id">
+          </div>
+          <br>
+          <div class="col-lg-6 mx-auto">
+            <input type="text" class="form-control"  formControlName="productPack" placeholder="Enter Product Packaging">
+          </div>
+          <br>
+          <div class="col-lg-6 mx-auto">
+            <input type="text" class="form-control"  formControlName="productLife" placeholder="Enter Product Shelf Life">
+          </div>
+      
+        <br>
+          <div class="text-center" *ngIf="!getparamid" (click)="productUpdate()">
+            <button class="col-lg-4 mx-auto btn btn-success">Update</button>
+        </div>
+        
+        </form>
+      
+      </div>
+    </div>

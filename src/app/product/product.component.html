@@ -1,0 +1,52 @@
+
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 1px solid black;
+         }
+
+         /* Button used to open the contact form - fixed at the bottom of the page */
+.add-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+      </style>
+   </head>
+
+   <tbody>
+      <h1> Products</h1>
+<table>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Type</th>
+            <th>Product Pack (gram)</th>
+           <th>Product Shelf life (Months)</th>
+         <tr *ngFor = 'let us of readData'>
+            <th scope="row" style="color:darkred">{{us.Id}}</th>
+            <td style="color :crimson" > {{us.ProductName}} </td>
+            <td style="color:crimson"> {{us.TypeId}} </td>
+            <td style="color:crimson"> {{us.ProductPack}} </td>
+            <td style="color:crimson"> {{us.ProductLife}} </td>
+            <td>
+               <button class="btn btn-sm btn-danger"  (click)="deleteProduct(us.Id)">Delete</button>
+            &nbsp;
+            
+            <a [routerLink]="['/update', us.Id]" class="btn btn-sm btn-dark">Update</a>
+         
+            <button class="add-button" [routerLink] = "['/create']">Add New Product</button>
+            </td>
+         </tr>
+      
+      </table>
+ 
+   </tbody>
+</html>
